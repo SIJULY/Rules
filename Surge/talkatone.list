@@ -1,25 +1,39 @@
-# talkatone
+# ==========================================
+# Talkatone 混合规则集 (UI 可选节点版)
+# 策略逻辑：
+# 1. 广告 -> REJECT
+# 2. IP检测 -> DIRECT
+# 3. App流量 -> 指向名为 "Talkatone" 的策略组
+# ==========================================
 
-DOMAIN-SUFFIX,mobilefuse.com
-DOMAIN-SUFFIX,inmobi.com
-DOMAIN-SUFFIX,crashlytics.com
-DOMAIN-SUFFIX,talkatone.com
-DOMAIN-SUFFIX,gum.criteo.com
-DOMAIN-SUFFIX,cdn2.inner-active.mobi
-DOMAIN-SUFFIX,cdn-f.adsmoloco.com
-DOMAIN-SUFFIX,inmobicdn.net
-DOMAIN-SUFFIX,bidswitch.net
-DOMAIN-SUFFIX,atmoatads.com
-DOMAIN-SUFFIX,imgx.jampp.com
-DOMAIN-SUFFIX,gstatic.com
-DOMAIN-SUFFIX,kochava.com
-DOMAIN-SUFFIX,tktn.be
-DOMAIN-SUFFIX,cohere.com
-DOMAIN-SUFFIX,ip-api.com
-DOMAIN-SUFFIX,agkn.com
-DOMAIN-SUFFIX,tktn.at
-DOMAIN-SUFFIX,tenor.com
-IP-CIDR,50.117.27.0/24
-IP-CIDR,69.46.75.0/24
-IP-CIDR,205.164.56.0/24
-IP-CIDR,63.251.124.0/24
+# --- 1. 广告屏蔽 (保持 REJECT) ---
+DOMAIN-SUFFIX,ads.inmobi.com,REJECT-DROP
+DOMAIN-SUFFIX,tappx.com,REJECT-DROP
+DOMAIN-SUFFIX,criteo.com,REJECT-DROP
+DOMAIN-SUFFIX,pubmatic.com,REJECT-DROP
+DOMAIN-SUFFIX,smaato.net,REJECT-DROP
+DOMAIN-SUFFIX,amazon-adsystem.com,REJECT-DROP
+DOMAIN-SUFFIX,googleads.g.doubleclick.net,REJECT-DROP
+DOMAIN-SUFFIX,adsappier.com,REJECT-DROP
+DOMAIN-SUFFIX,appier.net,REJECT-DROP
+DOMAIN-SUFFIX,appiersig.com,REJECT-DROP
+
+# --- 2. 流量走 Talkatone 策略组 (由你在 UI 选择) ---
+DOMAIN-SUFFIX,inner-active.mobi,Talkatone
+DOMAIN-SUFFIX,mobilefuse.com,Talkatone
+DOMAIN-SUFFIX,inmobi.com,Talkatone
+DOMAIN-SUFFIX,crashlytics.com,Talkatone
+DOMAIN-SUFFIX,talkatone.com,Talkatone
+DOMAIN-SUFFIX,kochava.com,Talkatone
+DOMAIN-SUFFIX,cohere.com,Talkatone
+DOMAIN-SUFFIX,agkn.com,Talkatone
+DOMAIN-SUFFIX,tktn.at,Talkatone
+DOMAIN-SUFFIX,tktn.be,Talkatone
+# 专用 IP 段
+IP-CIDR,50.117.27.0/24,Talkatone,no-resolve
+IP-CIDR,69.46.75.0/24,Talkatone,no-resolve
+IP-CIDR,205.164.56.0/24,Talkatone,no-resolve
+IP-CIDR,63.251.124.0/24,Talkatone,no-resolve
+
+# --- 3. 必须直连的检测 (保持 DIRECT) ---
+DOMAIN-SUFFIX,ip-api.com,DIRECT
