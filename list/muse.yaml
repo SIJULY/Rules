@@ -1,0 +1,39 @@
+# NAME: Muse (Meta AI)
+# AUTHOR: SIJULY
+# REPO: https://github.com/SIJULY/rules
+# UPDATED: 2026-10-07
+# 域名来源:
+#   (1) 独立安全研究者对 Muse macOS / iOS / Android 安装包的静态分析
+#       (从二进制中提取的后端域名),
+#       仓库: https://github.com/mahdi-salmanzade/meta-muse-teardown
+#   (2) 2026-10-07 实测 muse.ai 网页版本身返回的 Content-Security-Policy 头
+#       (网页版域名白名单)。
+#   (3) 2026-10-07 软路由 OpenClash connections API 实测 2 分钟 (使用 Muse 期间):
+#       命中 muse.ai / hatch.metaaivm.com / hatch-api.meta.ai / meta.graph.meta.com,
+#       无新增域名。
+# NOTE: meta.com 有意未收录 —— 范围太广，会把 Facebook/Instagram 的网页流量也劫持走。
+#       只单独收录了 Muse 用到的 auth.meta.com 与 meta.graph.meta.com。
+#       网页版还用到 Meta 公共 CDN (*.fbcdn.net / *.cdninstagram.com / *.facebook.com 等),
+#       请由各自的 Meta / Facebook 规则覆盖, 本规则集不收录以避免冲突。
+# 用法 (Clash / Mihomo):
+#   rule-providers:
+#     muse:
+#       type: http
+#       behavior: classical
+#       url: https://raw.githubusercontent.com/SIJULY/rules/refs/heads/main/list/muse.yaml
+#       path: ./ruleset/muse.yaml
+#       interval: 86400
+#   rules:
+#     - RULE-SET,muse,<你的美国节点策略组>
+# 注意: Muse 目前仅美区/加区开放, 建议指向美国节点。
+payload:
+  - DOMAIN-SUFFIX,muse.ai
+  - DOMAIN-SUFFIX,metaaivm.com
+  - DOMAIN-SUFFIX,meta.ai
+  - DOMAIN-SUFFIX,hatch.one
+  - DOMAIN-SUFFIX,willow606.com
+  - DOMAIN-SUFFIX,ecto1.ai
+  - DOMAIN-SUFFIX,auth.meta.com
+  - DOMAIN-SUFFIX,meta.graph.meta.com
+  - DOMAIN-SUFFIX,metaaiusercontent.com
+  - DOMAIN-SUFFIX,meta-agents-apps.workers.dev
