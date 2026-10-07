@@ -1,0 +1,18 @@
+# NAME: Muse (Meta AI)
+# AUTHOR: SIJULY
+# REPO: https://github.com/SIJULY/rules
+# UPDATED: 2026-10-07
+# 域名来源: Muse 安装包二进制拆解 + muse.ai 自身 CSP 头 + 软路由 OpenClash connections API 实测
+# NOTE: meta.com 未整域收录（范围太广，会误伤 Facebook/Instagram 流量），只收录 auth.meta.com 与 meta.graph.meta.com
+# 适用: Surge / Loon / Shadowrocket / Egern(rule_set) / Mihomo(rule-providers + format: text)
+# 注意: Muse 目前仅美区/加区开放，建议指向美国节点
+DOMAIN-SUFFIX,muse.ai
+DOMAIN-SUFFIX,metaaivm.com
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,hatch.one
+DOMAIN-SUFFIX,willow606.com
+DOMAIN-SUFFIX,ecto1.ai
+DOMAIN-SUFFIX,auth.meta.com
+DOMAIN-SUFFIX,meta.graph.meta.com
+DOMAIN-SUFFIX,metaaiusercontent.com
+DOMAIN-SUFFIX,meta-agents-apps.workers.dev
