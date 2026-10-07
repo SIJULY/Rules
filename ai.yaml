@@ -5,7 +5,8 @@
 # SOURCES:
 #   - 通用 AI 服务: https://raw.githubusercontent.com/EAlyce/conf/refs/heads/main/Rule/OpenAI.list
 #   - Muse (Meta AI) 专用: https://raw.githubusercontent.com/SIJULY/rules/main/muse.list
-# NOTE: meta.ai 已在源列表中, 本次新增其余 9 个 Muse 相关域名
+#   - AI 补全 (Copilot/Midjourney/Mistral/HF/Manus/Cursor 等, 2026-09-30 版)
+# NOTE: 已剔除 meta.com/facebook.com/fbcdn.net/amazonaws.com/googleapis.com 等过大域名; production.museai.com 未验证未收录
 # 适用: Clash / Mihomo / Stash / OpenClash (rule-provider, behavior 建议 classical, 因含 IP 类规则)
 payload:
   - DOMAIN,7h15.ru1353t.1s.m4d3.by.5ukk4w.skk.moe
@@ -35,6 +36,22 @@ payload:
   - DOMAIN,robinfrontend-pa.googleapis.com
   - DOMAIN,servd-anthropic-website.b-cdn.net
   - DOMAIN,static.cloudflareinsights.com
+  - DOMAIN,api.msn.com
+  - DOMAIN,assets.msn.com
+  - DOMAIN,copilot.microsoft.com
+  - DOMAIN,gateway.bingviz.microsoft.net
+  - DOMAIN,gateway.bingviz.microsoftapp.net
+  - DOMAIN,in.appcenter.ms
+  - DOMAIN,location.microsoft.com
+  - DOMAIN,meta-ohttp-config-prod.fastly-edge.com
+  - DOMAIN,meta-ohttp-relay-prod.fastly-edge.com
+  - DOMAIN,odc.officeapps.live.com
+  - DOMAIN,pplx-res.cloudinary.com
+  - DOMAIN,r.bing.com
+  - DOMAIN,self.events.data.microsoft.com
+  - DOMAIN,services.bingapis.com
+  - DOMAIN,sydney.bing.com
+  - DOMAIN,www.bing.com
   - DOMAIN-SUFFIX,ai.com
   - DOMAIN-SUFFIX,aicode.googleapis.com
   - DOMAIN-SUFFIX,aistudio.google.com
@@ -137,6 +154,30 @@ payload:
   - DOMAIN-SUFFIX,meta.graph.meta.com
   - DOMAIN-SUFFIX,metaaiusercontent.com
   - DOMAIN-SUFFIX,meta-agents-apps.workers.dev
+  - DOMAIN-SUFFIX,api.microsoftapp.net
+  - DOMAIN-SUFFIX,arkoselabs.com
+  - DOMAIN-SUFFIX,clients4.google.com
+  - DOMAIN-SUFFIX,colab.google.com
+  - DOMAIN-SUFFIX,colab.research.google.com
+  - DOMAIN-SUFFIX,cursor-cdn.com
+  - DOMAIN-SUFFIX,cursor.com
+  - DOMAIN-SUFFIX,cursorapi.com
+  - DOMAIN-SUFFIX,cursorvm.com
+  - DOMAIN-SUFFIX,edgeservices.bing.com
+  - DOMAIN-SUFFIX,grazie.ai
+  - DOMAIN-SUFFIX,hf.co
+  - DOMAIN-SUFFIX,hf.space
+  - DOMAIN-SUFFIX,huggingface.co
+  - DOMAIN-SUFFIX,livekit.cloud
+  - DOMAIN-SUFFIX,llama.com
+  - DOMAIN-SUFFIX,llamameta.net
+  - DOMAIN-SUFFIX,manus.im
+  - DOMAIN-SUFFIX,manuscdn.com
+  - DOMAIN-SUFFIX,midjourney.com
+  - DOMAIN-SUFFIX,mistral.ai
+  - DOMAIN-SUFFIX,perplexity.com
+  - DOMAIN-SUFFIX,poecdn.net
+  - DOMAIN-SUFFIX,pplx.ai
   - IP-ASN,13335,no-resolve
   - IP-ASN,20473,no-resolve
   - IP-ASN,399358,no-resolve
