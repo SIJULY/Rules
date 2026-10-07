@@ -2,7 +2,6 @@
 # AUTHOR: SIJULY
 # REPO: https://github.com/SIJULY/rules
 # UPDATED: 2026-10-07
-# SOURCE: https://raw.githubusercontent.com/QuixoticHeart/rule-set/refs/heads/ruleset/loon/talkatone.list
 # 适用: Surge / Loon / Shadowrocket / Egern(rule_set)
 DOMAIN-SUFFIX,agkn.com
 DOMAIN-SUFFIX,cohere.com
