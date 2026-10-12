@@ -1,0 +1,17 @@
+# NAME: Trading212
+# AUTHOR: SIJULY
+# REPO: https://github.com/SIJULY/rules
+# UPDATED: 2026-10-12
+# SOURCES:
+#   - https://raw.githubusercontent.com/LurnD/TradeRulesets/main/rules/trading212.list
+#   - trading212.com 官网 CSP 头 (补充 trading212.avus.io 基础设施域名)
+适用: Surge / Loon / Shadowrocket / Egern(rule_set)
+DOMAIN-SUFFIX,trading212.com
+DOMAIN-SUFFIX,trading212.avus.io
+DOMAIN-SUFFIX,trading212.co.uk
+DOMAIN-SUFFIX,trading212.de
+DOMAIN-SUFFIX,trading212.fr
+DOMAIN-SUFFIX,trading212.it
+DOMAIN-SUFFIX,trading212.pl
+DOMAIN-SUFFIX,trading212.ro
+DOMAIN-SUFFIX,trading212.es
